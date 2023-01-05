@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Let's See If It Works</title>
+<link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+
+<body class="extras"> 
+<div data-fade>Text that will fade in and out</div>
+
+<script>
+window.addEventListener('scroll', () => {
+  const scrollTop = window.pageYOffset;
+
+  fadeElements.forEach(el => {
+    const fadePosition = el.offsetTop;
+    const windowHeight = window.innerHeight;
+
+    if (fadePosition < scrollTop + windowHeight && fadePosition > scrollTop) {
+      el.style.opacity = 1;
+    } else {
+      el.style.opacity = 0;
+    }
+  });
+});
+
+[data-fade] {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
