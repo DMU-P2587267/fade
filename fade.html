@@ -8,8 +8,8 @@
 </head>
 
 <body class="extras"> 
-<div class="data-fade">Text that will fade in and out</div>
 
+<div data-fade>Text that will fade in and out</div>
 <script>
 window.addEventListener('scroll', () => {
   const scrollTop = window.pageYOffset;
@@ -25,13 +25,15 @@ window.addEventListener('scroll', () => {
     }
   });
 });
+</script>a
+</div>
 
+<script>
 [data-fade] {
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
 }
 </script>
-  </div>
 
-  </body>
+</body>
 </html>
